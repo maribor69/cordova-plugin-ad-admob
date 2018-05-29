@@ -574,7 +574,11 @@ public class AdMobOverlap implements PluginDelegate {
     }
 
 	class MyRewardedVideoListener implements RewardedVideoAdListener {
-		
+		@Override
+		public void onRewardedVideoCompleted() {
+			Log.d(LOG_TAG, String.format("%s", "onRewardedVideoAdFailedToLoad"));
+		}
+
 		@Override
 		public void onRewardedVideoAdFailedToLoad(int errorCode) {
 			Log.d(LOG_TAG, String.format("%s", "onRewardedVideoAdFailedToLoad"));
